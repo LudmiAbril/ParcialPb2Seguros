@@ -50,7 +50,7 @@ public void denunciarSiniestro(Integer numPoliza) throws PolizaInexistenteExcept
 
 public SegurosGenerales getPoliza(Integer numPoliza) throws PolizaInexistenteException {
 	for(SegurosGenerales p :this.polizasEmitidas) {
-		if(p.getNumeroDePoliza().equals(p.getNumeroDePoliza())) {
+		if(p.getNumeroDePoliza().equals(numPoliza)) {
 			return p;
 		}
 	} throw new PolizaInexistenteException();
