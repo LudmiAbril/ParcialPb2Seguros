@@ -41,27 +41,28 @@ public class SegundoParcial {
 		assertEquals(PREMIO, poliza.getPremio());
 	}
 	
-//	@Test
-//	public void queSePuedaEmitirUnaPolizaDeCombinadoFamiliar() {
-//		final Integer NUMERO_DE_POLIZA = 1;
-//		final Double SUMA_ASEGURADA = 20000000.0, PRIMA = 50000.0, PREMIO = 60000.0;
-//		
-//		Vivienda casa = new Vivienda("Florencio Varela 1800", "San Justo", "La Matanza", "Buenos Aires");
-//		Persona asegurado = new Persona("Camila", 45987345, 24);
-//		Persona hijo = new Persona("Arturo", 65456231, 2);
-//		Persona hija = new Persona("Maia", 65445231, 4);
-//		Persona conyuge = new Persona("Arturo", 65456231, 2);
-//		
-//		PolizaCombinadoFamiliar poliza = new PolizaCombinadoFamiliar(NUMERO_DE_POLIZA, asegurado, SUMA_ASEGURADA, PRIMA);
-//		poliza.agregarBeneficiario(hijo, TipoDeBeneficiario.HIJO);
-//		poliza.agregarBeneficiario(hija, TipoDeBeneficiario.HIJA);
-//		poliza.agregarBeneficiario(conyuge, TipoDeBeneficiario.CONYUGE);
-//		poliza.agregarBienAsegurado(casa);
-//	
-//		assertEquals(3, poliza.obtenerCantidadDeBeneficiario());
-//		assertEquals(asegurado, poliza.getAsegurado());
-//		assertEquals(PREMIO, poliza.getPremio());
-//	}
+	@Test
+	public void queSePuedaEmitirUnaPolizaDeCombinadoFamiliar() {
+		final Integer NUMERO_DE_POLIZA = 1;
+		final Double SUMA_ASEGURADA = 20000000.0, PRIMA = 50000.0, PREMIO = 60000.0;
+		
+		Vivienda casa = new Vivienda("Florencio Varela 1800", "San Justo", "La Matanza", "Buenos Aires");
+		Persona asegurado = new Persona("Camila", 45987345, 24);
+		Persona hijo = new Persona("Arturo", 65456231, 2);
+		Persona hija = new Persona("Maia", 65445231, 4);
+		Persona conyuge = new Persona("Emiliano", 65456235, 25);
+		
+		PolizaCombinadoFamiliar poliza = new PolizaCombinadoFamiliar(NUMERO_DE_POLIZA, asegurado, SUMA_ASEGURADA, PRIMA,PREMIO);
+		poliza.agregarBeneficiario(hijo, TipoDeBeneficiario.HIJO);
+		poliza.agregarBeneficiario(hija, TipoDeBeneficiario.HIJA);
+		poliza.agregarBeneficiario(conyuge, TipoDeBeneficiario.CONYUGE);
+		poliza.agregarBienAsegurado(casa);
+	
+		Integer esperado=3;
+		assertEquals(esperado, ((PolizaCombinadoFamiliar) poliza).obtenerCantidadDeBeneficiarios());
+		assertEquals(asegurado, poliza.getAsegurado());
+		assertEquals(PREMIO, poliza.getPremio());
+	}
 //	
 //	@Test
 //	public void queSePuedanAdministrarDistintosTiposDePolizas() {
