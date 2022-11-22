@@ -63,22 +63,22 @@ public class SegundoParcial {
 		assertEquals(asegurado, poliza.getAsegurado());
 		assertEquals(PREMIO, poliza.getPremio());
 	}
-//	
-//	@Test
-//	public void queSePuedanAdministrarDistintosTiposDePolizas() {
-//		Integer numeroDePoliza = 1;
-//		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
-//	
-//		libra.agregarPoliza(new PolizaDeAuto(1, new Persona("Camila", 45987345, 24), 2000000.0, 5000.0));
-//		libra.agregarPoliza(new PolizaDeAuto(2, new Persona("Juan", 2745123, 24), 1500000.0, 4000.0));
-//		libra.agregarPoliza(new PolizaAccidentesPersonales(3, new Persona("Pedro", 455647345, 24), 2000000.0, 5000.0));
-//		libra.agregarPoliza(new PolizaCombinadoFamiliar(4, new Persona("Natalia", 45987345, 24), 2000000.0, 5000.0));
-//		libra.agregarPoliza(new PolizaDeAuto(4, new Persona("Victor", 652354, 24), 2000000.0, 5000.0));
-//		
-//		
-//		assertEquals((Integer)4, libra.obtenerLaCantidadDePolizasEmitidas);
-//	}
-//
+	
+	@Test
+	public void queSePuedanAdministrarDistintosTiposDePolizas() {
+		Integer numeroDePoliza = 1;
+		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
+	
+		libra.agregarPoliza(new PolizaDeAuto(1, new Persona("Camila", 45987345, 24), 2000000.0, 5000.0,60000.0));
+		libra.agregarPoliza(new PolizaDeAuto(2, new Persona("Juan", 2745123, 24), 1500000.0, 4000.0,60000.0));
+		libra.agregarPoliza(new PolizaAccidentesPersonales(3, new Persona("Pedro", 455647345, 24), 2000000.0, 5000.0,60000.0));
+		libra.agregarPoliza(new PolizaCombinadoFamiliar(4, new Persona("Natalia", 5987346, 24), 2000000.0, 5000.0,60000.0));
+		libra.agregarPoliza(new PolizaDeAuto(5, new Persona("Victor", 652354, 24), 2000000.0, 5000.0,60000.0));
+		
+		
+		assertEquals((Integer)5, libra.obtenerLaCantidadDePolizasEmitidas());
+	}
+
 //	
 //	@Test
 //	public void queSePuedaDenunciarElRoboDeUnAuto() {

@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.eva03;
 
-public class SegurosGenerales {
+public class SegurosGenerales implements Comparable<SegurosGenerales> {
 	protected Integer numeroDePoliza;
 	protected Persona asegurado;
 	protected Double sumaAsegurada;
@@ -45,6 +45,11 @@ public class SegurosGenerales {
 	}
 	public void setPrima(Double prima) {
 		this.prima = prima;
+	}
+
+	@Override
+	public int compareTo(SegurosGenerales o) {
+		return this.getNumeroDePoliza().compareTo(o.getNumeroDePoliza());
 	}
 
 }
