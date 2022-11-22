@@ -6,17 +6,48 @@ import java.util.TreeSet;
 public class PolizaCombinadoFamiliar extends SegurosGenerales implements Ivida, Ibienes {
     private Vivienda casa;
     private Set<Beneficiario>beneficiarios;
-
+    private Boolean tuvoAlgunAccidente;
+    private Boolean fueRobado;
 	
 	
 	public PolizaCombinadoFamiliar(Integer numeroDePoliza, Persona asegurado, Double sumaAsegurada, Double prima,
 			Double premio) {
 		super(numeroDePoliza, asegurado, sumaAsegurada, prima, premio);
 		this.beneficiarios=new TreeSet<Beneficiario>();
+		this.fueRobado=false;
+		this.tuvoAlgunAccidente=false;
 	}
 
 
 	
+
+	public Boolean getTuvoAlgunAccidente() {
+		return tuvoAlgunAccidente;
+	}
+
+
+
+
+	public void setTuvoAlgunAccidente(Boolean tuvoAlgunAccidente) {
+		this.tuvoAlgunAccidente = tuvoAlgunAccidente;
+	}
+
+
+
+
+	public Boolean getFueRobado() {
+		return fueRobado;
+	}
+
+
+
+
+	public void setFueRobado(Boolean fueRobado) {
+		this.fueRobado = fueRobado;
+	}
+
+
+
 
 	public Vivienda getCasa() {
 		return casa;

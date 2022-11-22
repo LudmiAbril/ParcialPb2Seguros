@@ -32,4 +32,27 @@ public class CompaniaDeSeguro {
 public void agregarPoliza(SegurosGenerales poliza) {
 	this.polizasEmitidas.add(poliza);
 }
+
+public void denunciarSiniestro(Integer numPoliza) throws PolizaInexistenteException {
+	SegurosGenerales poliza=getPoliza(numPoliza);
+	if(poliza instanceof PolizaDeAuto) {
+		((PolizaDeAuto) poliza).setFueRobado(true);
+	}
+	if(poliza instanceof PolizaAccidentesPersonales) {
+		((PolizaAccidentesPersonales) poliza).setTuvoAlgunAccidente(true);
+	}
+	if(poliza instanceof PolizaCombinadoFamiliar) {
+		((PolizaCombinadoFamiliar) poliza).setFueRobado(true);
+		((PolizaCombinadoFamiliar) poliza).setTuvoAlgunAccidente(true);
+	}
+	
+}
+
+public SegurosGenerales getPoliza(Integer numPoliza) throws PolizaInexistenteException {
+	for(SegurosGenerales p :this.polizasEmitidas) {
+		if(p.getNumeroDePoliza().equals(p.getNumeroDePoliza())) {
+			return p;
+		}
+	} throw new PolizaInexistenteException();
+}
 }

@@ -79,20 +79,20 @@ public class SegundoParcial {
 		assertEquals((Integer)5, libra.obtenerLaCantidadDePolizasEmitidas());
 	}
 
-//	
-//	@Test
-//	public void queSePuedaDenunciarElRoboDeUnAuto() {
-//		Integer numeroDePoliza = 1;
-//		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
-//	
-//		libra.agregarPoliza(new PolizaDeAuto(numeroDePoliza, new Persona("Camila", 45987345, 24), 2000000.0, 5000.0);
-//		
-//		libra.denunciarSiniestro(1);
-//		
-//		assertTrue(libra.getPoliza(1).fueRobado());
-//		
-//	}
-//	
+	
+	@Test
+	public void queSePuedaDenunciarElRoboDeUnAuto() throws PolizaInexistenteException {
+		Integer numeroDePoliza = 1;
+		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
+	
+		libra.agregarPoliza(new PolizaDeAuto(numeroDePoliza, new Persona("Camila", 45987345, 24), 2000000.0, 5000.0, 60000.0));
+		
+		libra.denunciarSiniestro(1);
+		
+		assertTrue(((PolizaDeAuto)libra.getPoliza(1)).getFueRobado());
+		
+	}
+	
 //	@Test
 //	public void queSePuedaDenunciarUnSiniestroParaUnaPolizaDeVida) {
 //		Integer numeroDePoliza = 1;
