@@ -13,13 +13,13 @@ public class SegundoParcial {
 		
 		Persona asegurado = new Persona("Camila", 45987345, 24);
 		Auto auto = new Auto("Ford", "Fiesta", 2010, SUMA_ASEGURADA);
-		SegurosGenerales poliza = new PolizaDeAuto(NUMERO_DE_POLIZA, asegurado, SUMA_ASEGURADA, PRIMA);
-		poliza.agregarBienAsegurado(auto);
+		SegurosGenerales poliza = new PolizaDeAuto(NUMERO_DE_POLIZA, asegurado, SUMA_ASEGURADA, PRIMA, PREMIO);
+		((PolizaDeAuto) poliza).agregarBienAsegurado(auto);
 	
-		assertEquals(NUMERO_DE_POLIZA, poliza.getNumeroDePoliza);
-		assertEquals(auto, poliza.getAuto());
+		assertEquals(NUMERO_DE_POLIZA, poliza.getNumeroDePoliza());
+		assertEquals(auto, ((PolizaDeAuto) poliza).getAuto());
 		assertEquals(asegurado, poliza.getAsegurado());
-		assertEquals(PREMIO, poliza.getPremio());
+		assertEquals(PREMIO, ((SegurosGenerales) poliza).getPremio());
 	}
 	
 	@Test
