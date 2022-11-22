@@ -1,19 +1,28 @@
 package ar.edu.unlam.pb2.eva03;
 
-public class PolizaDeAuto extends SegurosGenerales {
-	private Auto bienAsegurado;
+public class PolizaDeAuto extends SegurosGenerales implements Ibienes {
+	private Auto auto;
 
 	public PolizaDeAuto(Integer numeroDePoliza, Persona asegurado, Double sumaAsegurada, Double prima,Double premio) {
 		super(numeroDePoliza, asegurado, sumaAsegurada, prima,premio);
 	}
 
 	public Auto getAuto() {
-		return bienAsegurado;
+		return auto;
 	}
 
-	public void agregarBienAsegurado(Auto bienAsegurado) {
-		this.bienAsegurado = bienAsegurado;
+	public void setAuto(Auto auto) {
+		this.auto = auto;
 	}
+
+	@Override
+	public void agregarBienAsegurado(Object bien) {
+		this.auto=(Auto) bien;
+		
+	}
+
+	
+	
 
 
 }
